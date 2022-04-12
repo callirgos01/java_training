@@ -2,6 +2,7 @@ package com.udacity.webcrawler;
 
 import com.google.inject.Guice;
 import com.udacity.webcrawler.json.CrawlerConfiguration;
+import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.Test;
 
 import javax.inject.Inject;
@@ -17,6 +18,12 @@ public final class ParallelWebCrawlerTest {
     CrawlerConfiguration config = new CrawlerConfiguration.Builder().build();
     Guice.createInjector(new WebCrawlerModule(config), new NoOpProfilerModule())
         .injectMembers(this);
-    assertThat(parallelWebCrawler.getMaxParallelism()).isGreaterThan(1);
+   assertThat(parallelWebCrawler.getMaxParallelism()).isGreaterThan(1);
   }
 }
+
+
+
+
+
+
